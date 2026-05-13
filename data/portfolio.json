@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "ECサイトリニューアル",
+      "description": "大手アパレルブランドのECサイトをNext.jsでフルリニューアル。パフォーマンスを50%改善し、コンバージョン率が20%向上。",
+      "category": "Web開発",
+      "url": "https://example.com/ec-site",
+      "createdAt": "2024-03-15",
+      "thumbnail": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+    },
+    {
+      "id": "2",
+      "title": "タスク管理アプリ",
+      "description": "チーム向けのタスク管理アプリケーション。リアルタイム同期、ドラッグ&ドロップ、通知機能を実装。",
+      "category": "アプリ開発",
+      "url": "https://example.com/task-app",
+      "createdAt": "2024-02-20",
+      "thumbnail": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop"
+    },
+    {
+      "id": "3",
+      "title": "企業コーポレートサイト",
+      "description": "IT企業のコーポレートサイト制作。モダンなデザインとアクセシビリティを両立。",
+      "category": "Web開発",
+      "url": "https://example.com/corporate",
+      "createdAt": "2024-01-10",
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+    },
+    {
+      "id": "4",
+      "title": "ブランドロゴデザイン",
+      "description": "スタートアップ企業のブランドアイデンティティ設計。ロゴ、カラーパレット、タイポグラフィを含む。",
+      "category": "デザイン",
+      "url": "https://example.com/logo-design",
+      "createdAt": "2023-12-05",
+      "thumbnail": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop"
+    },
+    {
+      "id": "5",
+      "title": "AIチャットボット",
+      "description": "カスタマーサポート向けのAIチャットボット。自然言語処理を活用した高精度な応答システム。",
+      "category": "AI/ML",
+      "url": "https://example.com/chatbot",
+      "createdAt": "2023-11-18",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop"
+    },
+    {
+      "id": "6",
+      "title": "モバイルフィットネスアプリ",
+      "description": "ワークアウト記録とトラッキング機能を備えたフィットネスアプリ。React Nativeで開発。",
+      "category": "アプリ開発",
+      "url": "https://example.com/fitness-app",
+      "createdAt": "2023-10-25",
+      "thumbnail": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop"
+    }
+  ]
+}

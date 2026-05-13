@@ -1,0 +1,176 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* クレヨン風パステルカラー */
+  --background: oklch(0.98 0.02 90);
+  --foreground: oklch(0.25 0.05 30);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.25 0.05 30);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.25 0.05 30);
+  --primary: oklch(0.65 0.2 25);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.85 0.12 200);
+  --secondary-foreground: oklch(0.25 0.05 200);
+  --muted: oklch(0.92 0.03 90);
+  --muted-foreground: oklch(0.45 0.03 30);
+  --accent: oklch(0.8 0.15 140);
+  --accent-foreground: oklch(0.25 0.05 140);
+  --destructive: oklch(0.65 0.25 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.75 0.08 30);
+  --input: oklch(0.92 0.03 90);
+  --ring: oklch(0.65 0.2 25);
+  
+  /* クレヨンカラーパレット */
+  --crayon-red: oklch(0.65 0.22 25);
+  --crayon-orange: oklch(0.75 0.18 60);
+  --crayon-yellow: oklch(0.9 0.15 95);
+  --crayon-green: oklch(0.7 0.15 145);
+  --crayon-blue: oklch(0.65 0.15 240);
+  --crayon-purple: oklch(0.65 0.18 300);
+  --crayon-pink: oklch(0.75 0.15 350);
+  
+  --chart-1: var(--crayon-red);
+  --chart-2: var(--crayon-blue);
+  --chart-3: var(--crayon-green);
+  --chart-4: var(--crayon-yellow);
+  --chart-5: var(--crayon-purple);
+  --radius: 1rem;
+  --sidebar: oklch(0.98 0.02 90);
+  --sidebar-foreground: oklch(0.25 0.05 30);
+  --sidebar-primary: var(--crayon-red);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.92 0.03 90);
+  --sidebar-accent-foreground: oklch(0.25 0.05 30);
+  --sidebar-border: oklch(0.75 0.08 30);
+  --sidebar-ring: var(--crayon-red);
+}
+
+.dark {
+  --background: oklch(0.2 0.02 30);
+  --foreground: oklch(0.95 0.02 90);
+  --card: oklch(0.25 0.02 30);
+  --card-foreground: oklch(0.95 0.02 90);
+  --popover: oklch(0.25 0.02 30);
+  --popover-foreground: oklch(0.95 0.02 90);
+  --primary: oklch(0.75 0.18 25);
+  --primary-foreground: oklch(0.15 0.02 30);
+  --secondary: oklch(0.45 0.1 200);
+  --secondary-foreground: oklch(0.95 0.02 90);
+  --muted: oklch(0.3 0.02 30);
+  --muted-foreground: oklch(0.7 0.02 90);
+  --accent: oklch(0.55 0.12 140);
+  --accent-foreground: oklch(0.95 0.02 90);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.95 0.02 90);
+  --border: oklch(0.4 0.05 30);
+  --input: oklch(0.3 0.02 30);
+  --ring: oklch(0.75 0.18 25);
+  --chart-1: oklch(0.7 0.2 25);
+  --chart-2: oklch(0.6 0.15 240);
+  --chart-3: oklch(0.65 0.15 145);
+  --chart-4: oklch(0.85 0.15 95);
+  --chart-5: oklch(0.6 0.18 300);
+  --sidebar: oklch(0.22 0.02 30);
+  --sidebar-foreground: oklch(0.95 0.02 90);
+  --sidebar-primary: oklch(0.75 0.18 25);
+  --sidebar-primary-foreground: oklch(0.15 0.02 30);
+  --sidebar-accent: oklch(0.3 0.02 30);
+  --sidebar-accent-foreground: oklch(0.95 0.02 90);
+  --sidebar-border: oklch(0.4 0.05 30);
+  --sidebar-ring: oklch(0.75 0.18 25);
+}
+
+@theme inline {
+  --font-sans: 'Patrick Hand', 'Comic Sans MS', cursive;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-crayon-red: var(--crayon-red);
+  --color-crayon-orange: var(--crayon-orange);
+  --color-crayon-yellow: var(--crayon-yellow);
+  --color-crayon-green: var(--crayon-green);
+  --color-crayon-blue: var(--crayon-blue);
+  --color-crayon-purple: var(--crayon-purple);
+  --color-crayon-pink: var(--crayon-pink);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* クレヨン風手描きボーダー */
+.crayon-border {
+  border: 3px solid currentColor;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/* 手描き風シャドウ */
+.crayon-shadow {
+  box-shadow: 
+    4px 4px 0 oklch(0.25 0.05 30 / 0.15),
+    -1px -1px 0 oklch(1 0 0 / 0.5) inset;
+}
+
+/* ワイグル(揺れ)アニメーション */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+/* 浮遊アニメーション */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
