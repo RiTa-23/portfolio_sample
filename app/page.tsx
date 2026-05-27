@@ -1,9 +1,9 @@
-import { getPortfolioItems, getCategories } from "@/lib/portfolio";
+import { getPortfolioItemsFormatted, getCategories } from "@/lib/portfolio";
 import { PortfolioGrid } from "@/components/portfolio-grid";
 import { Pencil, Star } from "lucide-react";
 
 export default async function Home() {
-  const items = await getPortfolioItems();
+  const items = await getPortfolioItemsFormatted();
   const categories = await getCategories();
 
   return (
