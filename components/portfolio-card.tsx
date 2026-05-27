@@ -61,6 +61,7 @@ export function PortfolioCard({ item, colorIndex }: PortfolioCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* リンクボタン */}
+        {item.url && (
         <a
           href={item.url}
           target="_blank"
@@ -73,6 +74,7 @@ export function PortfolioCard({ item, colorIndex }: PortfolioCardProps) {
         >
           <ExternalLink className="w-5 h-5 text-foreground" />
         </a>
+        )}
       </div>
 
       {/* コンテンツ */}
