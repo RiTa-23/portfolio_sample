@@ -1,5 +1,5 @@
-// lib/portfolio.ts
-// 後でNotionAPIに移行する際は、このファイルのgetPortfolioItems関数を変更するだけでOK
+// lib/portfolio.ts（修正）
+import { getPortfolioItems } from "@/lib/notion";
 
 export type PortfolioItem = {
   id: string;
@@ -11,16 +11,28 @@ export type PortfolioItem = {
   thumbnail: string;
 };
 
-// JSONからデータを取得する関数
-// NotionAPI移行時はこの関数を書き換える
-export async function getPortfolioItems(): Promise<PortfolioItem[]> {
-  const { default: data } = await import("@/data/portfolio.json");
-  return data.items as PortfolioItem[];
+function formatNotionItem(item: any): PortfolioItem {
+  const p = item.properties;
+  return {
+    id: item.id,
+    title: p.Name?.title?.[0]?.plain_text || "",
+    description: p.説明?.rich_text?.[0]?.plain_text || "",
+    category: p.カテゴリ?.select?.name || "",
+    url: p["userDefined:URL"]?.url || p.URL?.url || "",
+    createdAt: p.作成日?.date?.start || "",
+    thumbnail:
+      p.サムネイル?.files?.[0]?.file?.url ||
+      p.サムネイル?.files?.[0]?.external?.url ||
+      "",
+  };
 }
 
-// カテゴリ一覧を取得
+export async function getPortfolioItemsFormatted(): Promise<PortfolioItem[]> {
+  const results = await getPortfolioItems();
+  return results.map(formatNotionItem);
+}
+
 export async function getCategories(): Promise<string[]> {
-  const items = await getPortfolioItems();
-  const categories = [...new Set(items.map((item) => item.category))];
-  return categories.filter(Boolean);
+  const items = await getPortfolioItemsFormatted();
+  return [...new Set(items.map((item) => item.category))].filter(Boolean);
 }
